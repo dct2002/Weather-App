@@ -13,7 +13,6 @@ git clone https://github.com/AbdQader/flutter_weather_app.git
 flutter pub get
 4. Navigate to lib/utils/constants.dart and paste your API key to the mApiKey variable 
 static String API_KEY = 'Your API Key';
-5. Run the App
-
+5. Run the App 
 flutter run
 # Features
