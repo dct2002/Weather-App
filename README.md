@@ -8,7 +8,7 @@ A new Flutter project.
 - WeatherAPI.
 
 2. Clone the repository 
-- git clone https://github.com/AbdQader/flutter_weather_app.git
+- git clone https://github.com/dct2002/Weather-App.git
 
 3. Install all the packages by running 
 - flutter pub get
