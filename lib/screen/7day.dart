@@ -22,48 +22,6 @@ class _DetailPageState extends State<DetailPage> {
     Size size = MediaQuery.of(context).size;
     var weatherData = widget.dailyForecastWeather;
 
-    // String windSpeed = '0';
-    // String humidity = '0';
-    // String cloud = '0';
-    //function to get weather
-
-    // windSpeed = weatherData[1]["day"]["wind_kph"].toString();
-    // humidity = weatherData[1]["day"]["humidity"].toString();
-    // cloud = weatherData[1]["day"]["cloud"].toString();
-    // if (weatherData != null) {
-    //   windSpeed = weatherData[1]["day"]["wind_kph"];
-    //   humidity = weatherData[1]["day"]["humidity"].toInt();
-    //   cloud = weatherData[1]["day"]["cloud"].toInt();
-    //   // Tiếp tục xử lý với giá trị số nguyên intValue
-    // } else {
-    //   // Xử lý khi giá trị là null
-    //   'No data';
-    // }
-    //int maxWindSpeed = weatherData["day"]["maxwind_kph"].toInt();
-    // int avgHumidity = weatherData["day"]["avghumidity"].toInt();
-    // int chanceOfRain = weatherData["day"]["daily_chance_of_rain"].toInt();
-
-    // var parsedDate = DateTime.parse(weatherData["date"]);
-    // var forecastDate = DateFormat('EEEE, d MMMM').format(parsedDate);
-
-    // String weatherName = weatherData["day"]["condition"]["text"];
-    // String weatherIcon = weatherName.replaceAll(' ', '').toLowerCase() + ".png";
-
-    // int minTemperature = weatherData["day"]["mintemp_c"].toInt();
-    // int maxTemperature = weatherData["day"]["maxtemp_c"].toInt();
-
-    // var forecastData = {
-    //   'maxWindSpeed': maxWindSpeed,
-    //   'avgHumidity': avgHumidity,
-    //   'chanceOfRain': chanceOfRain,
-    //   'forecastDate': forecastDate,
-    //   'weatherName': weatherName,
-    //   'weatherIcon': weatherIcon,
-    //   'minTemperature': minTemperature,
-    //   'maxTemperature': maxTemperature
-    // };
-    // print(weatherData);
-
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
@@ -118,11 +76,6 @@ class _DetailPageState extends State<DetailPage> {
                       begin: Alignment.topLeft,
                       end: Alignment(0.8, 1),
                       colors: <Color>[
-                        // Color.fromARGB(255, 7, 124, 219),
-                        // Color.fromARGB(255, 50, 150, 233),
-                        // Color.fromARGB(255, 135, 190, 235),
-                        // Color.fromARGB(255, 179, 211, 238),
-
                         Color.fromARGB(255, 179, 211, 238),
                         Color.fromARGB(255, 135, 190, 235),
                         Color.fromARGB(255, 50, 150, 233),
@@ -162,12 +115,6 @@ class _DetailPageState extends State<DetailPage> {
                             ),
                             SizedBox(
                               height: 120,
-                              // child: Image.network(
-                              //   IconWeatherAPI,
-                              //   width: 160,
-                              //   height: 160,
-                              //   fit: BoxFit.cover,
-                              // ),
                               child: Image.asset('assets/' + weatherData[1]["day"]["condition"]["text"]
                                   .replaceAll(' ', '')
                                   .toLowerCase() +
@@ -192,9 +139,6 @@ class _DetailPageState extends State<DetailPage> {
                                     Padding(
                                       padding: const EdgeInsets.only(top: 10.0),
                                       child: Text(
-                                        // weatherData[1]["day"]["avgtemp_c"].toString().length == 4 ?
-                                        // weatherData[1]["day"]["avgtemp_c"].toString().substring(0, 2)
-                                        // : weatherData[1]["day"]["avgtemp_c"].toString().substring(0, 1),
                                         weatherData[1]["day"]["avgtemp_c"].round().toString(),
                                         style: const TextStyle(
                                           fontSize: 65,
@@ -212,25 +156,6 @@ class _DetailPageState extends State<DetailPage> {
                                         ),
                                       ),
                                     ),
-                                    // Padding(
-                                    //   padding: const EdgeInsets.only(top: 10.0),
-                                    //   child: Text(
-                                    //     '-' +
-                                    //         weatherData[1]["day"]["maxtemp_c"]
-                                    //             .toString(),
-                                    //     style: TextStyle(
-                                    //       fontSize: 18,
-                                    //       color: Colors.white,
-                                    //     ),
-                                    //   ),
-                                    // ),
-                                    // Text(
-                                    //   'o',
-                                    //   style: TextStyle(
-                                    //     color: Colors.white,
-                                    //     fontSize: 13,
-                                    //   ),
-                                    // ),
                                   ],
                                 ),
                                 SizedBox(
@@ -309,7 +234,6 @@ class _DetailPageState extends State<DetailPage> {
                     // ),
                     child: ListView.builder(
                       itemCount: weatherData.length,
-
                       itemBuilder: (context, index) {
                         return Container(
                           height: 60,
@@ -353,7 +277,6 @@ class _DetailPageState extends State<DetailPage> {
 
                               Container(
                                 width: 140,
-                                // color: Colors.amberAccent,
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -369,10 +292,10 @@ class _DetailPageState extends State<DetailPage> {
                                     SizedBox(
                                       width: 10,
                                     ),
-                                    Text(
-                                      weatherData[index]["day"]["condition"]["text"].substring(0, 6),
-                                      style: TextStyle(color: Colors.white, fontSize: 18),
-                                    )
+                                    // Text(
+                                    //   weatherData[index]["day"]["condition"]["text"].substring(0, 5),
+                                    //   style: TextStyle(color: Colors.white, fontSize: 18),
+                                    // )
                                   ],
                                 ),
                               ),

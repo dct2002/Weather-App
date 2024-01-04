@@ -27,7 +27,8 @@ class _HomePageState extends State<HomePage> {
 
   List<String> CityList = [];
 
-  static String API_KEY = '0a02e6811f8f404f83275200230410'; //Paste Your API Here
+  static String API_KEY =
+      '0a02e6811f8f404f83275200230410'; //Paste Your API Here
 
   String location = 'Hanoi'; //Default location
   String weatherIcon = 'heavycloudy.png';
@@ -41,12 +42,14 @@ class _HomePageState extends State<HomePage> {
   int maxtemp = 0;
   int mintemp = 0;
   String IconWeatherAPI = '';
+
   // String IconAPI = '';
 
   List hourlyWeatherForecast = [];
   List dailyWeatherForecast = [];
 
   String currentWeatherStatus = '';
+
   //var image_bg =  AssetImage("bg_weather.jpg");
   //API Call
   String searchWeatherAPI = "http://api.weatherapi.com/v1/forecast.json?key=" +
@@ -59,7 +62,6 @@ class _HomePageState extends State<HomePage> {
   static const AssetImage bg2 = AssetImage("assets/bg_sun.png");
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-
 
   void _loadData() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -91,23 +93,20 @@ class _HomePageState extends State<HomePage> {
         return AlertDialog(
           title: const Center(
               child: Column(
-                children: [
-                  Text(
-                      'History',
-                    style: TextStyle(
-                      fontSize: 20
-                    ),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Divider(
-                    color: Colors.black,
-                    height: 0.2,
-                  ),
-                ],
-              )
-          ),
+            children: [
+              Text(
+                'History',
+                style: TextStyle(fontSize: 20),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Divider(
+                color: Colors.black,
+                height: 0.2,
+              ),
+            ],
+          )),
           backgroundColor: Colors.white,
           content: SingleChildScrollView(
             child: Column(
@@ -229,7 +228,6 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
 
-
   void toggleDarkMode() {
     setState(() {
       isDarkMode = !isDarkMode;
@@ -242,33 +240,29 @@ class _HomePageState extends State<HomePage> {
         overlays: SystemUiOverlay.values);
 
     Size size = MediaQuery.of(context).size;
-    //precacheImage(image_bg, context);
+
     return Scaffold(
       key: _scaffoldKey,
-      //backgroundColor: Color.fromARGB(255, 40, 40, 40),
       drawer: Drawer(
         elevation: 20.0,
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-
             const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue
-              ),
-                child: Center(
-                  child: Text(
-                    'Weather App',
-                    style: TextStyle(
-                      fontSize: 40,
-                      color: Colors.white,
-                    ),
+              decoration: BoxDecoration(color: Colors.blue),
+              child: Center(
+                child: Text(
+                  'Weather App',
+                  style: TextStyle(
+                    fontSize: 40,
+                    color: Colors.white,
                   ),
                 ),
+              ),
             ),
             ListTile(
               title: new Text(
-                  "History",
+                "History",
                 style: TextStyle(
                   fontSize: 20,
                 ),
@@ -279,37 +273,14 @@ class _HomePageState extends State<HomePage> {
                 _showList();
               },
             ),
-            Divider( height: 0.1,),
-
-            // ListTile(
-            //   title: new Text(
-            //       "Notification"
-            //   ),
-            // )
-            // ListTile(
-            //   title: new Text("Primary"),
-            //   leading: new Icon(Icons.inbox),
-            // ),
-            // ListTile(
-            //   title: new Text("Social"),
-            //   leading: new Icon(Icons.people),
-            // ),
-            // ListTile(
-            //   title: new Text("Promotions"),
-            //   leading: new Icon(Icons.local_offer),
-            // )
+            Divider(
+              height: 0.1,
+            ),
           ],
         ),
       ),
 
       body: Container(
-        // width: size.width,
-        // height: size.height,
-        // padding: const EdgeInsets.only(
-        //   top: 40,
-        //   left: 10,
-        //   right: 10,
-        // ),
         decoration: BoxDecoration(
           image: DecorationImage(
             //image: AssetImage("assets/background_weather.png"),
@@ -317,15 +288,9 @@ class _HomePageState extends State<HomePage> {
             fit: BoxFit.cover,
           ),
         ),
-
-
         child: SingleChildScrollView(
           child: Container(
             height: 1450,
-            //height: 900,
-            // decoration: BoxDecoration(
-            //   color: Colors.transparent,
-            // ),
             padding: const EdgeInsets.only(
               top: 40,
               left: 10,
@@ -343,16 +308,10 @@ class _HomePageState extends State<HomePage> {
                       begin: Alignment.topLeft,
                       end: Alignment(0.8, 1),
                       colors: <Color>[
-                        // Color.fromARGB(255, 7, 124, 219),
-                        // Color.fromARGB(255, 50, 150, 233),
-                        // Color.fromARGB(255, 135, 190, 235),
-                        // Color.fromARGB(255, 179, 211, 238),
-
                         //Color.fromARGB(255, 179, 211, 238),
                         Color.fromARGB(255, 135, 190, 235),
                         Color.fromARGB(255, 50, 150, 233),
                         Color.fromARGB(255, 7, 124, 219),
-
                       ],
                     ),
                     // image: DecorationImage(
@@ -377,24 +336,9 @@ class _HomePageState extends State<HomePage> {
                         children: [
                           IconButton(
                             onPressed: () {
-                              // showMaterialModalBottomSheet(
-                              //   context: context,
-                              //   builder: (context) => Container(
-                              //     height: size.width * 0.5,
-                              //     width: size.width * 0.5,
-                              //     color: Colors.white,
-                              //     child: Column(
-                              //       mainAxisAlignment: MainAxisAlignment.center,
-                              //       children: [
-                              //         ListView.builder(itemBuilder: itemBuilder)
-                              //       ],
-                              //     ),
-                              //   ),
-                              // );
-                              //_showList();
-                              _scaffoldKey.currentState?.openDrawer(); // Mở drawer khi nhấn button
+                              _scaffoldKey.currentState
+                                  ?.openDrawer(); // Mở drawer khi nhấn button
                             },
-
                             icon: Icon(
                               Icons.menu,
                               size: 25,
@@ -504,16 +448,6 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ],
                           ),
-                          // IconButton(
-                          //   onPressed: () {
-                          //     // _saveData(location);
-                          //   },
-                          //   icon: const Icon(
-                          //     Icons.add,
-                          //     size: 25,
-                          //     color: Colors.white,
-                          //   ),
-                          // ),
                           Switch(
                             value: isDarkMode,
                             onChanged: (value) {
@@ -529,18 +463,10 @@ class _HomePageState extends State<HomePage> {
                       Text(
                         currentDate,
                         style: const TextStyle(
-                          color: Colors.white70,
-                          fontSize: 20
-                        ),
+                            color: Colors.white70, fontSize: 20),
                       ),
                       SizedBox(
                         height: 160,
-                        // child: Image.network(
-                        //   IconWeatherAPI,
-                        //   width: 160,
-                        //   height: 160,
-                        //   fit: BoxFit.cover,
-                        // ),
                         child: Image.asset('assets/' + weatherIcon),
                       ),
                       Row(
@@ -588,12 +514,7 @@ class _HomePageState extends State<HomePage> {
                           fontSize: 20.0,
                         ),
                       ),
-                      // Text(
-                      //   currentDate,
-                      //   style: const TextStyle(
-                      //     color: Colors.white70,
-                      //   ),
-                      // ),
+
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: const Divider(
@@ -693,16 +614,17 @@ class _HomePageState extends State<HomePage> {
                               scrollDirection: Axis.horizontal,
                               physics: const BouncingScrollPhysics(),
                               itemBuilder: (BuildContext context, int index) {
-                                String currentTime =
-                                    DateFormat('HH:mm:ss').format(DateTime.now());
-                                String currentHour = currentTime.substring(0, 2);
+                                String currentTime = DateFormat('HH:mm:ss')
+                                    .format(DateTime.now());
+                                String currentHour =
+                                    currentTime.substring(0, 2);
 
-                                String forecastTime = hourlyWeatherForecast[index]
-                                        ["time"]
-                                    .substring(11, 16);
-                                String forecastHour = hourlyWeatherForecast[index]
-                                        ["time"]
-                                    .substring(11, 13);
+                                String forecastTime =
+                                    hourlyWeatherForecast[index]["time"]
+                                        .substring(11, 16);
+                                String forecastHour =
+                                    hourlyWeatherForecast[index]["time"]
+                                        .substring(11, 13);
 
                                 String forecastWeatherName =
                                     hourlyWeatherForecast[index]["condition"]
@@ -717,24 +639,23 @@ class _HomePageState extends State<HomePage> {
                                         .round()
                                         .toString();
                                 String forecastChancerain =
-                                    hourlyWeatherForecast[index]["chance_of_rain"]
-                                    .toString();
+                                    hourlyWeatherForecast[index]
+                                            ["chance_of_rain"]
+                                        .toString();
                                 return Container(
-                                  padding: const EdgeInsets.symmetric(vertical: 15),
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 15),
                                   margin: const EdgeInsets.only(right: 7),
                                   width: 70,
                                   //width: 80,
                                   decoration: BoxDecoration(
-                                      //color: currentHour == forecastHour
-                                          // ? Color.fromARGB(255, 94, 180, 250)
-                                          // : Color.fromARGB(255, 88, 88, 88),
+
                                       color: Color.fromARGB(255, 49, 50, 51),
                                       borderRadius: const BorderRadius.all(
                                           Radius.circular(20)),
                                       boxShadow: [
                                         BoxShadow(
                                           offset: const Offset(0, 1),
-
                                           blurRadius: 5,
                                           color: _constants.primaryColor
                                               .withOpacity(.2),
@@ -760,13 +681,13 @@ class _HomePageState extends State<HomePage> {
                                         height: 5,
                                       ),
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
                                           Image.asset(
                                             'assets/umbrella.png',
                                             width: 15,
                                           ),
-
                                           Text(
                                             forecastChancerain + '%',
                                             style: TextStyle(
@@ -779,7 +700,8 @@ class _HomePageState extends State<HomePage> {
                                         ],
                                       ),
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
                                           Text(
                                             forecastTemperature,
@@ -802,7 +724,6 @@ class _HomePageState extends State<HomePage> {
                                           ),
                                         ],
                                       ),
-
                                     ],
                                   ),
                                 );

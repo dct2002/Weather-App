@@ -41,7 +41,6 @@ class _DetailsState extends State<Details> {
                   shape: BoxShape.rectangle,
                   borderRadius: BorderRadius.circular(30),
                   color: Color.fromARGB(255, 54, 54, 54),
-                  //color: Color.fromRGBO(132, 207, 215, 0.5019607843137255)
                   //color: Colors.transparent,
                 ),
                 child: Column(
